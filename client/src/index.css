@@ -1,0 +1,155 @@
+:root {
+  font-family: Inter, system-ui, Arial, sans-serif;
+  color: #f4f4f5;
+  background: #111827;
+}
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  min-width: 320px;
+  min-height: 100vh;
+  background: linear-gradient(180deg, #111827 0%, #0f172a 100%);
+}
+
+button, input, select { font: inherit; }
+
+button {
+  cursor: pointer;
+  border: none;
+  border-radius: 12px;
+  padding: 10px 14px;
+  font-weight: 700;
+}
+
+input, select {
+  padding: 10px 12px;
+  border-radius: 10px;
+  border: 1px solid #334155;
+  background: #0f172a;
+  color: white;
+}
+
+.app {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 16px;
+}
+
+.card {
+  background: rgba(15, 23, 42, 0.95);
+  border: 1px solid #1e293b;
+  border-radius: 16px;
+  padding: 16px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+}
+
+.grid { display: grid; gap: 16px; }
+
+.topbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  margin-bottom: 16px;
+}
+
+.title {
+  font-size: 28px;
+  font-weight: 800;
+}
+
+.muted { color: #94a3b8; }
+
+.players {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 12px;
+}
+
+.playerBox {
+  background: #111827;
+  border: 1px solid #243041;
+  border-radius: 14px;
+  padding: 12px;
+}
+
+.playerBox.active { border-color: #22c55e; }
+.playerBox.dead { opacity: 0.65; }
+
+.influences {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 10px;
+}
+
+.influence {
+  border-radius: 12px;
+  padding: 10px;
+  min-width: 90px;
+  text-align: center;
+  background: #1e293b;
+  border: 1px solid #334155;
+}
+
+.influence.back { background: #334155; }
+.influence.revealed { background: #7f1d1d; border-color: #ef4444; }
+
+.actions {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 10px;
+}
+
+.actions button { background: #2563eb; color: white; }
+.actions button.secondary { background: #475569; }
+.actions button.warn { background: #dc2626; }
+
+.log {
+  max-height: 520px;
+  overflow: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.logItem {
+  background: #111827;
+  border: 1px solid #1f2937;
+  border-radius: 12px;
+  padding: 10px;
+}
+
+.row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.stack {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.notice {
+  padding: 12px;
+  border-radius: 12px;
+  background: #1d4ed8;
+}
+
+.error {
+  padding: 12px;
+  border-radius: 12px;
+  background: #7f1d1d;
+}
+
+.small { font-size: 14px; }
+
+@media (max-width: 900px) {
+  .mainGrid {
+    grid-template-columns: 1fr !important;
+  }
+}
